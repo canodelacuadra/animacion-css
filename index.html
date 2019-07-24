@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+	<title>Animación CSS</title>
+	<meta charset="utf-8" >
+	<meta name="description" content="Es una animación con css de un texto y de una imagen" >
+	<meta name="author" content="José Antonio Cano" >
+	<meta name="keywords" content="animacion, css, villarrobledo,web" >
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="styles.css" >
+	<style>
+	#lienzo{
+	width:900px;
+	height:600px;
+	background-color:purple;
+	animation-name:fondocolor;
+animation-duration:5s;
+ animation-iteration-count:infinite;
+ margin: 0 auto;
+overflow:hidden;
+position:relative; 
+	}
+	#movido{
+	color:black;
+	font-size:2em;
+	position:relative;
+	left:900px;
+	animation-name:moverizquierda;
+	animation-duration:10s;
+	animation-iteration-count:3;
+	}
+	@keyframes fondocolor{
+		0%{
+		background-color:purple;
+		}
+		30%{
+		background-color:orange;
+		}
+		60%{
+		background-color:skyblue;
+		}
+	}
+	@keyframes moverizquierda{
+		0%{
+		left:900px;
+		}
+		100%{
+		left:-900px;
+		}
+	}
+	#bola{
+	width:100px;
+	height:100px;
+	border-radius:50%;
+	background-color:white;
+	position:absolute;
+	top:0;
+	left:0;
+	animation-name:darvuelta;
+	animation-duration:10s;
+	animation-iteration-count:infinite;
+	animation-timing-function:linear;
+	background-image:url('gato-felix.png');
+	background-size:cover;
+	}
+	@keyframes darvuelta{
+		0%{
+		top:0;
+		left:0;
+		}
+		25%{
+		top:500px;
+		left:0;
+		}
+		50%{
+		top:500px;
+		left:800px;
+		}
+		75%{
+		top:0;
+		left:800px;
+		}
+	
+	
+	
+	}
+	#up{
+	position:fixed;
+	bottom:0;
+	right:0;
+	
+	}
+	.fa-arrow-alt-circle-up{
+	color:green;
+	font-size:3em;
+	}
+	</style>
+</head>
+
+<body>
+<div  id="lienzo">
+	<p id='movido'>Hola soy el gato felix</p>
+	<div id='bola'></div>
+</div>
+<a id='up'href="#"><i class="far fa-arrow-alt-circle-up"></i></a>
+
+</body>
+</html>
