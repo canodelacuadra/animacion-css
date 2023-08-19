@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animación con requestAnimationFrame</title>
+<style>
+  #box {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: violet;
+    position: absolute;
+  }
+</style>
+</head>
+<body>
+<div id="box"></div>
+<script>
+  const box = document.getElementById('box');
+  let startTime;
+
+  function animate(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const progress = timestamp - startTime;
+    box.style.left = Math.min(progress / 10, 300) + 'px'; // Mueve el cuadro a la derecha
+    if (progress < 3000) {
+      requestAnimationFrame(animate); // Continúa la animación si no han pasado 3 segundos
+    }
+  }
+
+  requestAnimationFrame(animate); // Inicia la animación
+</script>
+</body>
+</html>
