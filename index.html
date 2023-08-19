@@ -3,12 +3,16 @@
 <head>
 	<title>Animación CSS</title>
 	<meta charset="utf-8" >
-	<meta name="description" content="Es una animación con css de un texto y de una imagen" >
-	<meta name="author" content="José Antonio Cano" >
-	<meta name="keywords" content="animacion, css, villarrobledo,web" >
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="styles.css" >
 	<style>
+		body{
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		}
+		h1,nav{
+			text-align: center;
+		}
+		nav{
+			margin-bottom: 1em;
+		}
 	#lienzo{
 	width:900px;
 	height:600px;
@@ -95,19 +99,18 @@ position:relative;
 	font-size:3em;
 	}
 	</style>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-145157681-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-145157681-1');
-</script>
 
 </head>
 
 <body>
+	<h1>Animaciones con CSS </h1>
+	<nav>
+		<a href="index.html">animacion css</a>
+		<a href="animacion-js.html">animacion js</a>
+		<a href="https://canodelacuadra.github.io/paresynones/">Pares o Nones</a>
+		
+	</nav>
 <div  id="lienzo">
 	<p id='movido'>Hola soy el gato felix</p>
 	<div id='bola'></div>

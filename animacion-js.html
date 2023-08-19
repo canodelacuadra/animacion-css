@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html  lang="es">
+<head>
+	<title>Animación JS</title>
+	<meta charset="utf-8" >
+	<style>
+		body{
+			font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+		}
+		h1,nav{
+			text-align: center;
+		}
+		nav{
+			margin-bottom: 1em;
+		}
+	.box {
+        margin:0 auto;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    transition: background-color 0.5s ease;
+}
+.button{
+    margin-top: 1em;
+   text-align: center;
+
+} 
+	
+	</style>
+
+
+</head>
+
+<body>
+	<h1>Animaciones con JS </h1>
+	<nav>
+		<a href="index.html">animacion css</a>
+		<a href="animacion-js.html">animacion js</a>
+		<a href="https://canodelacuadra.github.io/paresynones/">Pares o Nones</a>
+	</nav>
+ <div class="box" id="animatedBox"></div>
+ <div class="button">
+    <button id="animateButton">Cambiar colorr</button>
+
+ </div>
+    
+
+    <script >
+        const animatedBox = document.getElementById("animatedBox");
+const animateButton = document.getElementById("animateButton");
+
+animateButton.addEventListener("click", () => {
+    animatedBox.style.backgroundColor = getRandomColor();
+});
+
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+    </script>
+
+</body>
+</html>
