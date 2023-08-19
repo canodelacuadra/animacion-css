@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Animación en Canvas</title>
+<style>
+  canvas {
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+    	<nav>
+		<a href="index.html">animacion css</a>
+		<a href="animacion-js.html">animacion js</a>
+		<a href="animacion-svg.html">animacion svg</a>
+		<a href="canvas.html">animacion canvas</a>
+        <a href=" https://canodelacuadra.github.io/diapositivas-css-js/">Diapositivas hechas con bootstrap</a>
+       
+		<a href="https://canodelacuadra.github.io/paresynones/">Pares o Nones</a>
+	</nav>
+<canvas id="myCanvas"></canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas");
+const ctx = canvas.getContext("2d");
+
+// Posición inicial del objeto
+let x = 50;
+let y = 50;
+
+// Velocidad del objeto
+let dx = 2;
+let dy = 2;
+
+// Función para dibujar el objeto en el canvas
+function drawObject() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Limpiar el canvas
+  ctx.fillStyle = "blue";
+  ctx.beginPath();
+  ctx.arc(x, y, 20, 0, Math.PI * 2);
+  ctx.fill();
+
+  // Actualizar la posición
+  x += dx;
+  y += dy;
+
+  // Rebotar cuando llega a los bordes del canvas
+  if (x + dx > canvas.width - 20 || x + dx < 20) {
+    dx = -dx;
+  }
+  if (y + dy > canvas.height - 20 || y + dy < 20) {
+    dy = -dy;
+  }
+
+  requestAnimationFrame(drawObject); // Llamar a la función de nuevo para la siguiente animación
+}
+
+drawObject(); // Iniciar la animación
+</script>
+</body>
+</html>

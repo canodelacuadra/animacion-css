@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          .circle {
+    fill: blue;
+    transition: fill 0.5s, r 1s;
+  }
+  
+  .circle:hover {
+    fill: red;
+    r: 80;
+  }
+    </style>
+
+</head>
+<body>
+    	<nav>
+		<a href="index.html">animacion css</a>
+		<a href="animacion-js.html">animacion js</a>
+		<a href="animacion-svg.html">animacion svg</a>
+		<a href="canvas.html">animacion canvas</a>
+        <a href=" https://canodelacuadra.github.io/diapositivas-css-js/">Diapositivas hechas con bootstrap</a>
+       
+		<a href="https://canodelacuadra.github.io/paresynones/">Pares o Nones</a>
+	</nav>
+    <div id="'animacion-svg">
+          <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="100" cy="100" r="50" fill="blue">
+    <animate attributeName="r" from="50" to="80" dur="2s" repeatCount="indefinite" />
+    <animate attributeName="fill" values="blue;red;green;blue" dur="4s" repeatCount="indefinite" />
+  </circle>
+   </svg>
+    </div>
+  <div id="animacioncss">
+  <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <circle class="circle" cx="100" cy="100" r="50" />
+  </svg>
+  </div>
+
+</svg>
+  <svg id="svg" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <circle class="circle2" cx="100" cy="100" r="50" />
+  </svg>
+
+  <script>
+    const circle = document.querySelector('.circle2');
+    const svg = document.getElementById('svg');
+    
+    let radius = 50;
+    let fill = 'blue';
+
+    function animateCircle() {
+      radius = radius === 50 ? 80 : 50;
+      fill = fill === 'blue' ? 'red' : 'blue';
+
+      circle.setAttribute('r', radius);
+      circle.setAttribute('fill', fill);
+
+      requestAnimationFrame(animateCircle);
+    }
+
+    svg.addEventListener('mouseenter', () => {
+      animateCircle();
+    });
+
+    svg.addEventListener('mouseleave', () => {
+      cancelAnimationFrame(animateCircle);
+      circle.setAttribute('r', 50);
+      circle.setAttribute('fill', 'blue');
+    });
+  </script>
+</body>
+</html>
